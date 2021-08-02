@@ -99,7 +99,7 @@ holder.getImageView().setImageResource(R.drawable.promotion);
             super(itemView);
             textView = itemView.findViewById(R.id.textView);
             textView.setOnClickListener(v -> {
-                listener.onItemClick(getAdapterPosition());
+                listener.onItemClick(getAdapterPosition()); // todo this tomorrow
             });
 
 
