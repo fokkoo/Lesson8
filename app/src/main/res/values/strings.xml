@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Newgeekbrainsapplication</string>
+    <string name="title1">Жим лежа 1</string>
+    <string name="description1">лягте на скамейку</string>
+    <string name="title2">приседание</string>
+    <string name="description2">присядьте по глубже</string>
 </resources>
