@@ -31,6 +31,30 @@ public class CardSourceImpl implements CardSource {
                         context.getResources().getString(R.string.description2),
                         R.drawable.nature1,
                         false
+                ),
+                new CardData(
+                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.description2),
+                        R.drawable.deadlift,
+                        false
+                ),
+                new CardData(
+                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.description2),
+                        R.drawable.nature1,
+                        false
+                ),
+                new CardData(
+                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.description2),
+                        R.drawable.deadlift,
+                        false
+                ),
+                new CardData(
+                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.description2),
+                        R.drawable.nature1,
+                        false
                 )
         };
 
