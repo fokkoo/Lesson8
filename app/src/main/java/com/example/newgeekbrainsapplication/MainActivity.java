@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    // 49 57
+    // 2 19 49
     private itemAdapter adapter;
     private CardSource cardSource;
     private RecyclerView recyclerView;
