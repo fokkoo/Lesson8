@@ -25,6 +25,7 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
     //   public static final int VIEW_TYPE_TEXT = 0;
    // public static final int NO_POSITION = -1;
   //  private int currentPosition = NO_POSITION; // позиция элемента для его последующего удаления
+    //
     private final CardSource dataSource;
 
     private OnItemClickListener listener;
