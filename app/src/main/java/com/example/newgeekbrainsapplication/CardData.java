@@ -1,6 +1,12 @@
 package com.example.newgeekbrainsapplication;
 
+import com.google.firebase.firestore.Exclude;
+
 public class CardData {
+
+
+    @Exclude // исключаем передачу ID в позж документ
+    private String id; // поле индификации карточки
     private String title;       // заголовок
     private String description; // описание
     private int picture;        // изображение
@@ -11,6 +17,14 @@ public class CardData {
         this.description = description;
         this.picture = picture;
         this.like = like;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -28,5 +42,9 @@ public class CardData {
     public boolean isLike() {
         return like;
     }
+
+
+
+
 }
 

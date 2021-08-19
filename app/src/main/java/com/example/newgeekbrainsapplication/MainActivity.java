@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        adapter = new itemAdapter(cardSource);
         recyclerView = findViewById(R.id.recyclerView);
+
+
+        cardSource.init(cardSource -> adapter.notifyDataSetChanged());
 
      /*   String[] data = new  String[]{
                 "Жим лежа",
@@ -43,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         };*/
 
-        cardSource = new CardSourceImpl(this);
+        cardSource = new CardSourceFirebaseImpl();
 
-        adapter = new itemAdapter(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
         recyclerView.setAdapter(adapter);
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
-                view.showContextMenu(20,20); //показываем контекст меню с отступом
+                view.showContextMenu(20, 20); //показываем контекст меню с отступом
             }
 
 
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             case R.id.action_update:
-                cardSource.updateCardData(currentPosition,new CardData("new Title","Description", R.drawable.nature1,false));
+                cardSource.updateCardData(currentPosition, new CardData("new Title", "Description", R.drawable.nature1, false));
                 adapter.notifyItemChanged(currentPosition); // уведомление адаптера о обновлении списка
                 return true;
         }

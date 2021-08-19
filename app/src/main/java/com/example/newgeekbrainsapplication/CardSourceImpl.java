@@ -9,13 +9,25 @@ import java.util.List;
 public class CardSourceImpl implements CardSource {
 
 
-    // private final Context context;
+     private  Context context;
 
     private List<CardData> cards;
 
 
     public CardSourceImpl(Context context) {
-        //    this.context = context;
+        this.context = context;
+    }
+
+
+
+    @Override
+    public CardData getCardData(int position) {
+        return cards.get(position);
+    }
+
+    @Override
+    public CardSource init(CardSourceResponse response) {
+//    this.context = context;
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardData(
@@ -78,11 +90,11 @@ public class CardSourceImpl implements CardSource {
 
         )
         );
-    }
 
-    @Override
-    public CardData getCardData(int position) {
-        return cards.get(position);
+        if (response!= null){
+            response.initialized(this);
+        }
+        return this;
     }
 
     @Override
