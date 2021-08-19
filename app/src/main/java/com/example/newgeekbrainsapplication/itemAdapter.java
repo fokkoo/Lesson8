@@ -23,6 +23,8 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
 
     //    public static final int VIEW_TYPE_IMAGE = 1;
     //   public static final int VIEW_TYPE_TEXT = 0;
+   // public static final int NO_POSITION = -1;
+  //  private int currentPosition = NO_POSITION; // позиция элемента для его последующего удаления
     private final CardSource dataSource;
 
     private OnItemClickListener listener;
@@ -119,10 +121,17 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
             imageView.setImageResource(cardData.getPicture());
             like.setChecked(cardData.isLike());
 
+
+            imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
         }
         //   imageView = itemView.findViewById(R.id.image);
     }
 
+// 1:03
+
+    interface OnItemClickListener {
+        void onItemClick( View view, int position); // which position is clicked
+    }
     //   public TextView getTextView() {
     //       return textView;
     //  }
@@ -132,10 +141,10 @@ public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder
        /* public ImageView getImageView() {
             return imageView;
         }*/
+
+
 }
 
-interface OnItemClickListener {
-    void onItemClick(int position); // which position is clicked
-}
+
 
 
