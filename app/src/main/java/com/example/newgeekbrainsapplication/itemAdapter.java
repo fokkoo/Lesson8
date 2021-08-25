@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 
 public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder> {
-
+//
     //    public static final int VIEW_TYPE_IMAGE = 1;
     //   public static final int VIEW_TYPE_TEXT = 0;
    // public static final int NO_POSITION = -1;
