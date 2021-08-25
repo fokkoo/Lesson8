@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "886806451426",
+    "project_id": "pumpdiary-53339",
+    "storage_bucket": "pumpdiary-53339.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886806451426:android:f959960cb0a1142ca27abb",
+        "android_client_info": {
+          "package_name": "com.example.newgeekbrainsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886806451426-4rslhdg5u7vup68qq1eaac6fu06o6ic6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5d9Snak2e25S6UzBbOpJjhJ3cS6DOBv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886806451426-4rslhdg5u7vup68qq1eaac6fu06o6ic6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
