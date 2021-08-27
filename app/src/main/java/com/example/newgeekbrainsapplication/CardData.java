@@ -1,7 +1,10 @@
 package com.example.newgeekbrainsapplication;
 
+import com.google.firebase.firestore.Exclude;
+
 public class CardData {
 
+    @Exclude // исключение айди для передачи
     private String id; // id of card
     private String title;       // заголовок
     private String description; // описание
