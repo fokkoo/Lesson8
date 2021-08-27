@@ -8,19 +8,17 @@ import java.util.List;
 
 public class CardSourceImpl implements CardSource {
 
-
+    private Context context;
     // private final Context context;
 
-    private List <CardData> cards;
+    private List<CardData> cards;
 
-    public static final List <String> IMAGES = new ArrayList<>(Arrays.asList(
+    public static final List<String> IMAGES = new ArrayList<>(Arrays.asList(
             "http://placekitten.com/200/300",
             "http://placekitten.com/400/300",
             "http://placekitten.com/400/400"
 
-    )) ;
-
-
+    ));
 
 
     public List<CardData> getCards() {
@@ -33,18 +31,7 @@ public class CardSourceImpl implements CardSource {
 
 
     @Override
-    public CardSource init (CardSourceResponse response){
-
-       //1.41.16
-
-        return this;
-    }
-
-
-
-    public CardSourceImpl(Context context) {
-        //    this.context = context;
-
+    public CardSource init(CardSourceResponse response) {
         cards = new ArrayList<>(Arrays.asList(
                 new CardData(
                         context.getResources().getString(R.string.title1),
@@ -106,6 +93,19 @@ public class CardSourceImpl implements CardSource {
 
         )
         );
+
+        if (response!= null){
+            response.initialized(this);
+        }
+
+        return this;
+    }
+
+
+    public CardSourceImpl(Context context) {
+        //    this.context = context;
+
+        this.context = context;
     }
 
     @Override

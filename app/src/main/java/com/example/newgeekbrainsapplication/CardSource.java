@@ -2,9 +2,10 @@ package com.example.newgeekbrainsapplication;
 
 public interface CardSource {
 
+    CardSource init(CardSourceResponse  response);
     CardData getCardData(int position);
 
-    CardSource init(CardSourceResponse  response);
+
 
     void deliteCardData (int position);
     void updateCardData (int position, CardData cardData);

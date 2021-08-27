@@ -1,6 +1,8 @@
 package com.example.newgeekbrainsapplication;
 
 public class CardData {
+
+    private String id; // id of card
     private String title;       // заголовок
     private String description; // описание
     private int picture;        // изображение
@@ -11,6 +13,14 @@ public class CardData {
         this.description = description;
         this.picture = picture;
         this.like = like;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

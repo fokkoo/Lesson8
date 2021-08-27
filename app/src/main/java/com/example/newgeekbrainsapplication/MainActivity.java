@@ -45,17 +45,21 @@ public class MainActivity extends AppCompatActivity {
         };*/
 
         cardSource = new CardSourceImpl(this);
-
         adapter = new itemAdapter(cardSource);
+
+
+        cardSource.init(cardSource -> adapter.notifyDataSetChanged());
+
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
 
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
         itemDecoration.setDrawable(getResources().getDrawable(R.drawable.divider, null)); // отступы между элементами
         recyclerView.addItemDecoration(itemDecoration);
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
         adapter.setListener(new itemAdapter.OnItemClickListener() {
             @Override
