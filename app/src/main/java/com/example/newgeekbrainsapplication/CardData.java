@@ -11,6 +11,15 @@ public class CardData {
     private int picture;        // изображение
     private boolean like;       // флажок
 
+
+
+    public CardData() {
+
+    }
+
+
+
+
     public CardData(String title, String description, int picture, boolean like) {
         this.title = title;
         this.description = description;

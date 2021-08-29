@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.UUID;
+
 public class MainActivity extends AppCompatActivity {
     // 49 57
     private itemAdapter adapter;
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         };*/
 
-        cardSource = new CardSourceImpl(this);
+       // cardSource = new CardSourceImpl(this);
+        cardSource = new CardsSourceFirebaseImpl();
         adapter = new itemAdapter(cardSource);
 
 
@@ -92,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_add:
-                cardSource.addCardData(new CardData("new title", "new description", R.drawable.nature1, false));
+                CardData cardData = new CardData("new title", "new description", R.drawable.nature1, false);
+                cardData.setId(UUID.randomUUID().toString()); // генерация айди случайного для приложения
+
+                cardSource.addCardData(cardData );
                 adapter.notifyItemChanged(cardSource.size() - 1); // уведомление адаптера о обновлении списка в конкретном месте
                 recyclerView.scrollToPosition(cardSource.size() - 1);
                 return true;
@@ -120,7 +126,9 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             case R.id.action_update:
-                cardSource.updateCardData(currentPosition,new CardData("new Title","Description", R.drawable.nature1,false));
+                CardData cardData = new CardData("new Title","Description", R.drawable.nature1,false);
+                cardData.setId(cardSource.getCardData(currentPosition).getId()); // сохраняем сгенерированный случайный айдишник
+                cardSource.updateCardData(currentPosition,cardData);
                 adapter.notifyItemChanged(currentPosition); // уведомление адаптера о обновлении списка
                 return true;
         }
